@@ -5,7 +5,10 @@ from flask import json
 
 # Add parent directory to Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from app import create_app
+try:
+    from app import create_app
+except ImportError:
+    from ..app import create_app
 
 @pytest.fixture(name="test_client")
 def fixture_test_client():
