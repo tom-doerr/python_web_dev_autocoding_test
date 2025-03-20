@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from .models import Task
+from tasks.models import Task
 
 class TaskModelTests(TestCase):
     def test_create_task(self):
